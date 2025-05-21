@@ -2,15 +2,11 @@ package dao;
 
 import entities.Evento;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
 
-public class EventoDAO {
-
-    private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProvaJPA");
+public class EventoDAO extends GenericDAO {
 
     public void save(Evento evento) {
-        EntityManager em = emf.createEntityManager();
+        EntityManager em = getEntityManager();
         try {
             em.getTransaction().begin();
             em.persist(evento);
@@ -21,7 +17,7 @@ public class EventoDAO {
     }
 
     public Evento getById(Long id) {
-        EntityManager em = emf.createEntityManager();
+        EntityManager em = getEntityManager();
         try {
             return em.find(Evento.class, id);
         } finally {
@@ -30,7 +26,7 @@ public class EventoDAO {
     }
 
     public void delete(Long id) {
-        EntityManager em = emf.createEntityManager();
+        EntityManager em = getEntityManager();
         try {
             em.getTransaction().begin();
             Evento evento = em.find(Evento.class, id);
@@ -42,9 +38,6 @@ public class EventoDAO {
             em.close();
         }
     }
-
-    public void close() {
-        emf.close();
-    }
 }
+
 

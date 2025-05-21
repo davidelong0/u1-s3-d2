@@ -1,28 +1,70 @@
 package main;
 
 import dao.EventoDAO;
+import dao.PersonaDAO;
+import dao.LocationDAO;
+import dao.PartecipazioneDAO;
+
 import entities.Evento;
+import entities.Persona;
+import entities.Location;
+import entities.Partecipazione;
 import entities.TipoEvento;
+import entities.StatoPartecipazione;
 
 import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-        EventoDAO dao = new EventoDAO();
+        // Creo le DAO
+        EventoDAO eventoDAO = new EventoDAO();
+        PersonaDAO personaDAO = new PersonaDAO();
+        LocationDAO locationDAO = new LocationDAO();
+        PartecipazioneDAO partecipazioneDAO = new PartecipazioneDAO();
 
-        Evento evento = new Evento(1L, "Concerto Rock", LocalDate.of(2025, 6, 20), "Concerto dal vivo", TipoEvento.PUBBLICO, 1000);
+        try {
+            // Creo una persona e la salvo
+            Persona persona = new Persona();
+            persona.setNome("Mario");
+            persona.setCognome("Rossi");
+            // imposta altri campi di Persona se necessari
+            personaDAO.save(persona);
 
+            // Creo una location e la salvo
+            Location location = new Location();
+            location.setNome("Arena di Verona");
+            location.setIndirizzo("Piazza Bra, Verona");
+            // imposta altri campi di Location se necessari
+            locationDAO.save(location);
 
-        dao.save(evento);
+            // Creo un evento collegato alla location
+            Evento evento = new Evento();
+            evento.setTitolo("Concerto Rock");
+            evento.setDataEvento(LocalDate.of(2025, 6, 20));
+            evento.setDescrizione("Concerto dal vivo");
+            evento.setTipoEvento(TipoEvento.PUBBLICO);
+            evento.setNumeroMassimoPartecipanti(1000);
+            evento.setLocation(location);
+            eventoDAO.save(evento);
 
+            // Creo una partecipazione collegata alla persona e all'evento
+            Partecipazione partecipazione = new Partecipazione();
+            partecipazione.setEvento(evento);
+            partecipazione.setPersona(persona);
+            partecipazione.setStato(StatoPartecipazione.CONFERMATA);
+            partecipazioneDAO.save(partecipazione);
 
-        Evento trovato = dao.getById(1L);
-        System.out.println("Evento trovato: " + trovato.getTitolo());
+            // Recupero e stampo l'evento per conferma
+            Evento trovato = eventoDAO.getById(evento.getId());
+            System.out.println("Evento trovato: " + trovato.getTitolo());
 
-       
-        dao.delete(1L);
-
-        dao.close();
+        } finally {
+            // Chiudo tutte le DAO per liberare risorse (chiude anche EntityManagerFactory)
+            partecipazioneDAO.close();
+            eventoDAO.close();
+            personaDAO.close();
+            locationDAO.close();
+        }
     }
 }
 
