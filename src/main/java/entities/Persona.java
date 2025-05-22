@@ -3,6 +3,7 @@ package entities;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 public class Persona {
@@ -22,11 +23,11 @@ public class Persona {
     @OneToMany(mappedBy = "persona")
     private List<Partecipazione> listaPartecipazioni;
 
-    // Costruttore vuoto richiesto da JPA
+
     public Persona() {
     }
 
-    // Costruttore completo (utile se lo usi tu)
+
     public Persona(long id, String nome, String cognome, String email, LocalDate dataDiNascita, Sesso sesso, List<Partecipazione> listaPartecipazioni) {
         this.id = id;
         this.nome = nome;
@@ -37,6 +38,7 @@ public class Persona {
         this.listaPartecipazioni = listaPartecipazioni;
     }
 
+    // Getters e Setters
     public long getId() {
         return id;
     }
@@ -91,6 +93,20 @@ public class Persona {
 
     public void setListaPartecipazioni(List<Partecipazione> listaPartecipazioni) {
         this.listaPartecipazioni = listaPartecipazioni;
+    }
+
+    // equals e hashCode (optional, ma utili in JPA)
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Persona)) return false;
+        Persona persona = (Persona) o;
+        return id == persona.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
 

@@ -5,20 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f613ea13-1be9-4a5e-92b2-631e43658f74" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/GenericDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/LocationDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/PartecipazioneDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/PersonaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Location.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Partecipazione.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Persona.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Sesso.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/StatoPartecipazione.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Concerto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entities/GaraDiAtletica.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entities/GenereConcerto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entities/PartitaDiCalcio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/EventoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/EventoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entities/Evento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Evento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/TipoEvento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/TipoEvento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,16 +40,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "onboarding.tips.debug.path": "/Users/davidelongo/Downloads/EPICODE/backendcourse/u1-s3-d2/src/main/java/catalogo-bibliotecario/Main.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/davidelongo/Downloads/EPICODE/backendcourse/u1-s3-d2/src/main/java/catalogo-bibliotecario/Main.java&quot;
   }
-}]]></component>
+}</component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="f613ea13-1be9-4a5e-92b2-631e43658f74" name="Changes" comment="" />
