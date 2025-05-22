@@ -25,5 +25,13 @@ public class GaraDiAtletica extends Evento {
     public void setAtleti(Set<Persona> atleti) { this.atleti = atleti; }
     public Persona getVincitore() { return vincitore; }
     public void setVincitore(Persona vincitore) { this.vincitore = vincitore; }
+
+    @Override
+    public String toString() {
+        return "GaraDiAtletica{" +
+                "atleti=" + atleti +
+                ", vincitore=" + vincitore +
+                '}';
+    }
 }
 

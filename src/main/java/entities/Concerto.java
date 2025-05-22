@@ -30,4 +30,12 @@ public class Concerto extends Evento {
 
     public boolean isInStreaming() { return inStreaming; }
     public void setInStreaming(boolean inStreaming) { this.inStreaming = inStreaming; }
+
+    @Override
+    public String toString() {
+        return "Concerto{" +
+                "genere=" + genere +
+                ", inStreaming=" + inStreaming +
+                '}';
+    }
 }

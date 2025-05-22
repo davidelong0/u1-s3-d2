@@ -44,6 +44,17 @@ public class Location {
 
     public List<Evento> getEventi() { return eventi; }
     public void setEventi(List<Evento> eventi) { this.eventi = eventi; }
+
+    @Override
+    public String toString() {
+        return "Location{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", citta='" + citta + '\'' +
+                ", indirizzo='" + indirizzo + '\'' +
+                ", eventi=" + eventi +
+                '}';
+    }
 }
 
 

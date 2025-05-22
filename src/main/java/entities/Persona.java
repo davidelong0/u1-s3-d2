@@ -95,7 +95,19 @@ public class Persona {
         this.listaPartecipazioni = listaPartecipazioni;
     }
 
-    // equals e hashCode (optional, ma utili in JPA)
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", cognome='" + cognome + '\'' +
+                ", email='" + email + '\'' +
+                ", dataDiNascita=" + dataDiNascita +
+                ", sesso=" + sesso +
+                ", listaPartecipazioni=" + listaPartecipazioni +
+                '}';
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
